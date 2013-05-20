@@ -1,0 +1,210 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CB1484013E4667A009FF21D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB1483F13E4667A009FF21D /* CoreServices.framework */; };
+		8424500A0E7D26AB00A2BE64 /* mount_diskimage.m in Sources */ = {isa = PBXBuildFile; fileRef = 842450000E7D265B00A2BE64 /* mount_diskimage.m */; };
+		8424500B0E7D26B700A2BE64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D681B10E66C9B800068117 /* Foundation.framework */; };
+		84AFD4D30E8E61BE00AFA5C0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AFD4D10E8E61BE00AFA5C0 /* CoreFoundation.framework */; };
+		84D9E7160E9D413E00D4D0F1 /* NSTask+Execute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9E7150E9D413E00D4D0F1 /* NSTask+Execute.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4CB1483F13E4667A009FF21D /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		842450000E7D265B00A2BE64 /* mount_diskimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mount_diskimage.m; sourceTree = "<group>"; };
+		842450040E7D267800A2BE64 /* mount_diskimage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mount_diskimage; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AFD4D10E8E61BE00AFA5C0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		84D681B10E66C9B800068117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		84D9E7140E9D413E00D4D0F1 /* NSTask+Execute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+Execute.h"; sourceTree = "<group>"; };
+		84D9E7150E9D413E00D4D0F1 /* NSTask+Execute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+Execute.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		842450020E7D267800A2BE64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8424500B0E7D26B700A2BE64 /* Foundation.framework in Frameworks */,
+				4CB1484013E4667A009FF21D /* CoreServices.framework in Frameworks */,
+				84AFD4D30E8E61BE00AFA5C0 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* EncryptedData */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C1671FE841209C02AAC07 /* Frameworks */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = EncryptedData;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84D681B10E66C9B800068117 /* Foundation.framework */,
+				4CB1483F13E4667A009FF21D /* CoreServices.framework */,
+				84AFD4D10E8E61BE00AFA5C0 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				84D9E7140E9D413E00D4D0F1 /* NSTask+Execute.h */,
+				84D9E7150E9D413E00D4D0F1 /* NSTask+Execute.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				842450040E7D267800A2BE64 /* mount_diskimage */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				842450000E7D265B00A2BE64 /* mount_diskimage.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		842450030E7D267800A2BE64 /* mount_diskimage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 842450180E7D26F900A2BE64 /* Build configuration list for PBXNativeTarget "mount_diskimage" */;
+			buildPhases = (
+				842450010E7D267800A2BE64 /* Sources */,
+				842450020E7D267800A2BE64 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mount_diskimage;
+			productName = mount_diskimage;
+			productReference = 842450040E7D267800A2BE64 /* mount_diskimage */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0440;
+			};
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "MountDiskimage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* EncryptedData */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				842450030E7D267800A2BE64 /* mount_diskimage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		842450010E7D267800A2BE64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8424500A0E7D26AB00A2BE64 /* mount_diskimage.m in Sources */,
+				84D9E7160E9D413E00D4D0F1 /* NSTask+Execute.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				OTHER_CFLAGS = "-Weverything";
+				SDKROOT = macosx10.7;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = /;
+				OTHER_CFLAGS = "-Weverything";
+				SDKROOT = macosx10.7;
+			};
+			name = Release;
+		};
+		842450060E7D267900A2BE64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				INSTALL_PATH = "$HOME/.unison/root-darwin";
+				PRODUCT_NAME = mount_diskimage;
+			};
+			name = Debug;
+		};
+		842450070E7D267900A2BE64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INSTALL_PATH = "$HOME/.unison/root-darwin";
+				PRODUCT_NAME = mount_diskimage;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "MountDiskimage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		842450180E7D26F900A2BE64 /* Build configuration list for PBXNativeTarget "mount_diskimage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842450060E7D267900A2BE64 /* Debug */,
+				842450070E7D267900A2BE64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
