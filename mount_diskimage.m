@@ -1,7 +1,6 @@
 /* This executable will be run by automountd to handle 'diskimage' type mounts.
  * Apart from mount options, which we ignore completely, the relevant arguments
  * are the disk image to mount and the target mountpoint.
- * We run a helper script, which uses hdiutil to actually perform the mount.
  * Automountd will have prepared the mountpoint and will run this executable
  * as the user requesting the mount. */
 
