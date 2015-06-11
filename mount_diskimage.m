@@ -78,7 +78,7 @@ int main(int argc, const char *argv[])
 #endif
 		
 		/* play it safe: prevent concurrent execution of automounts */
-		lock = open([lockfile fileSystemRepresentation], O_CREAT | O_RDWR | O_EXLOCK);
+		lock = open([lockfile fileSystemRepresentation], O_CREAT | O_RDWR | O_EXLOCK, S_IRUSR | S_IWUSR);
 		if (lock < 0) {
 			NSLog(@"failed to acquire lock");
 			return EPERM;
