@@ -4,9 +4,7 @@
  * Automountd will have prepared the mountpoint and will run this executable
  * as the user requesting the mount. */
 
-#import <CoreFoundation/CoreFoundation.h>
 #import <Foundation/Foundation.h>
-
 #import "NSTask+Execute.h"
 
 #include <stdlib.h>
@@ -17,36 +15,6 @@
 #include <sys/stat.h>
 #include <sys/errno.h>
 
-
-/* Start helper executable using launch services, because it executes the helper
- * in the user’s bootstrap domain, where it has proper access to keychains. */
-static int launch(const UInt8 *executablePath, CFArrayRef arguments)
-{
-	FSRef executable;
-	if (FSPathMakeRef(executablePath, &executable, NULL) != 0) {
-		NSLog(@"unable to locate %s", executablePath);
-		return EPERM;
-	}
-	LSApplicationParameters launchParams = {
-		.version =  0,
-		.flags =  kLSLaunchDontAddToRecents | kLSLaunchDontSwitch | kLSLaunchNewInstance,
-		.application =  &executable,
-		.asyncLaunchRefCon = NULL,
-		.environment = NULL,
-		.argv =  arguments,
-		.initialEvent = NULL
-	};
-	
-	/* I hope the waiting for the launchee is not done in a run loop, as this
-	 * would register with diskarbitrationd and deadlock asking for details on
-	 * the mount we want to establish. */
-	if (LSOpenApplication(&launchParams, NULL) != 0) {
-		NSLog(@"error launching %s", executablePath);
-		return EPERM;
-	}
-	
-	return 0;
-}
 
 /* start helper executable using standard fork()/exec() */
 static int forkexec(NSString *executablePath, NSArray *arguments)
@@ -121,7 +89,7 @@ int main(int argc, const char *argv[])
 		/* compact the disk image for about 10% of mount attempts */
 		srand(time(NULL));
 		if ((float)rand() / (float)RAND_MAX < 0.1) {
-			status = launch((const UInt8 *)"/usr/bin/hdiutil", (CFArrayRef)[NSArray arrayWithObjects:@"compact", image, nil]);
+			status = forkexec(@"/usr/bin/hdiutil", [NSArray arrayWithObjects:@"compact", image, nil]);
 			if (status != 0)
 				NSLog(@"compaction failed for disk image ‘%@’", image);
 			else
@@ -137,7 +105,7 @@ int main(int argc, const char *argv[])
 		 * Only children and grand-children of automountd can proceed. Mounting
 		 * through DiskArbitration subverts this and causes deadlock. */
 		NSString *shellCommand = [NSString stringWithFormat:@"/usr/bin/hdiutil attach '%@' -nomount -noverify -noautofsck -plist > %@", image, lockfile];
-		status = launch((const UInt8 *)"/bin/sh", (CFArrayRef)[NSArray arrayWithObjects:@"-c", shellCommand, nil]);
+		status = forkexec(@"/bin/sh", [NSArray arrayWithObjects:@"-c", shellCommand, nil]);
 		if (status != 0) {
 			NSLog(@"attaching the disk image ‘%@’ failed with error code %d", image, status);
 			return EPERM;

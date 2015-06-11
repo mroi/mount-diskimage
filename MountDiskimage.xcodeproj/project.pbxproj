@@ -7,18 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4CB1484013E4667A009FF21D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB1483F13E4667A009FF21D /* CoreServices.framework */; };
 		8424500A0E7D26AB00A2BE64 /* mount_diskimage.m in Sources */ = {isa = PBXBuildFile; fileRef = 842450000E7D265B00A2BE64 /* mount_diskimage.m */; };
 		8424500B0E7D26B700A2BE64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D681B10E66C9B800068117 /* Foundation.framework */; };
-		84AFD4D30E8E61BE00AFA5C0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AFD4D10E8E61BE00AFA5C0 /* CoreFoundation.framework */; };
 		84D9E7160E9D413E00D4D0F1 /* NSTask+Execute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9E7150E9D413E00D4D0F1 /* NSTask+Execute.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4CB1483F13E4667A009FF21D /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		842450000E7D265B00A2BE64 /* mount_diskimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mount_diskimage.m; sourceTree = "<group>"; };
 		842450040E7D267800A2BE64 /* mount_diskimage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mount_diskimage; sourceTree = BUILT_PRODUCTS_DIR; };
-		84AFD4D10E8E61BE00AFA5C0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		84D681B10E66C9B800068117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		84D9E7140E9D413E00D4D0F1 /* NSTask+Execute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+Execute.h"; sourceTree = "<group>"; };
 		84D9E7150E9D413E00D4D0F1 /* NSTask+Execute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+Execute.m"; sourceTree = "<group>"; };
@@ -30,8 +26,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8424500B0E7D26B700A2BE64 /* Foundation.framework in Frameworks */,
-				4CB1484013E4667A009FF21D /* CoreServices.framework in Frameworks */,
-				84AFD4D30E8E61BE00AFA5C0 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,8 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				84D681B10E66C9B800068117 /* Foundation.framework */,
-				4CB1483F13E4667A009FF21D /* CoreServices.framework */,
-				84AFD4D10E8E61BE00AFA5C0 /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
