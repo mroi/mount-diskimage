@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B42C71ED-B655-42D9-9224-86C1C3E3783C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MountDiskimage</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9675E8F691605C99E08E80C9D2DC5FDBA4569444</key>
+		<string>github.com:mroi/mount-diskimage.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MountDiskimage.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9675E8F691605C99E08E80C9D2DC5FDBA4569444</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:mroi/mount-diskimage.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9675E8F691605C99E08E80C9D2DC5FDBA4569444</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9675E8F691605C99E08E80C9D2DC5FDBA4569444</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mount-diskimage</string>
+		</dict>
+	</array>
+</dict>
+</plist>
