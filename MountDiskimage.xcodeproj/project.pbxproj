@@ -71,6 +71,9 @@
 			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 089C166AFE841209C02AAC07 /* MountDiskimage */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -117,6 +120,8 @@
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				INSTALL_PATH = "$HOME/.unison/root-darwin";
+				OTHER_CODE_SIGN_FLAGS = "-i $(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.reactorcontrol.mount-diskimage";
 				PRODUCT_NAME = mount_diskimage;
 			};
 			name = Debug;
@@ -126,6 +131,8 @@
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INSTALL_PATH = "$HOME/.unison/root-darwin";
+				OTHER_CODE_SIGN_FLAGS = "-i $(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.reactorcontrol.mount-diskimage";
 				PRODUCT_NAME = mount_diskimage;
 			};
 			name = Release;
