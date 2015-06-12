@@ -9,15 +9,12 @@
 /* Begin PBXBuildFile section */
 		8424500A0E7D26AB00A2BE64 /* mount_diskimage.m in Sources */ = {isa = PBXBuildFile; fileRef = 842450000E7D265B00A2BE64 /* mount_diskimage.m */; };
 		8424500B0E7D26B700A2BE64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D681B10E66C9B800068117 /* Foundation.framework */; };
-		84D9E7160E9D413E00D4D0F1 /* NSTask+Execute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9E7150E9D413E00D4D0F1 /* NSTask+Execute.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		842450000E7D265B00A2BE64 /* mount_diskimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mount_diskimage.m; sourceTree = "<group>"; };
 		842450040E7D267800A2BE64 /* mount_diskimage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mount_diskimage; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D681B10E66C9B800068117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		84D9E7140E9D413E00D4D0F1 /* NSTask+Execute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+Execute.h"; sourceTree = "<group>"; };
-		84D9E7150E9D413E00D4D0F1 /* NSTask+Execute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+Execute.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,48 +29,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		089C166AFE841209C02AAC07 /* EncryptedData */ = {
-			isa = PBXGroup;
-			children = (
-				08FB77AFFE84173DC02AAC07 /* Classes */,
-				32C88E010371C26100C91783 /* Other Sources */,
-				089C1671FE841209C02AAC07 /* Frameworks */,
-				19C28FB8FE9D52D311CA2CBB /* Products */,
-			);
-			name = EncryptedData;
-			sourceTree = "<group>";
-		};
-		089C1671FE841209C02AAC07 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				84D681B10E66C9B800068117 /* Foundation.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		08FB77AFFE84173DC02AAC07 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				84D9E7140E9D413E00D4D0F1 /* NSTask+Execute.h */,
-				84D9E7150E9D413E00D4D0F1 /* NSTask+Execute.m */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		19C28FB8FE9D52D311CA2CBB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				842450040E7D267800A2BE64 /* mount_diskimage */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		32C88E010371C26100C91783 /* Other Sources */ = {
+		089C166AFE841209C02AAC07 /* MountDiskimage */ = {
 			isa = PBXGroup;
 			children = (
 				842450000E7D265B00A2BE64 /* mount_diskimage.m */,
+				84D681B10E66C9B800068117 /* Foundation.framework */,
+				842450040E7D267800A2BE64 /* mount_diskimage */,
 			);
-			name = "Other Sources";
+			name = MountDiskimage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,13 +71,7 @@
 			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
-			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
-			);
-			mainGroup = 089C166AFE841209C02AAC07 /* EncryptedData */;
+			mainGroup = 089C166AFE841209C02AAC07 /* MountDiskimage */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -129,7 +86,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8424500A0E7D26AB00A2BE64 /* mount_diskimage.m in Sources */,
-				84D9E7160E9D413E00D4D0F1 /* NSTask+Execute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +104,7 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Michael Roitzsch";
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DSTROOT = /;

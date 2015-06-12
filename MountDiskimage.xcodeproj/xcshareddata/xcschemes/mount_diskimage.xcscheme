@@ -9,7 +9,7 @@
          <BuildActionEntry
             buildForTesting = "NO"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
+            buildForProfiling = "NO"
             buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
@@ -84,16 +84,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "842450030E7D267800A2BE64"
-            BuildableName = "mount_diskimage"
-            BlueprintName = "mount_diskimage"
-            ReferencedContainer = "container:MountDiskimage.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
@@ -101,5 +91,23 @@
    <ArchiveAction
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
+      <PostActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "rsync -acO --delete &quot;$ARCHIVE_PRODUCTS_PATH/$INSTALL_PATH/$FULL_PRODUCT_NAME&quot; &quot;/$INSTALL_PATH/$FULL_PRODUCT_NAME&quot;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "842450030E7D267800A2BE64"
+                     BuildableName = "mount_diskimage"
+                     BlueprintName = "mount_diskimage"
+                     ReferencedContainer = "container:MountDiskimage.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PostActions>
    </ArchiveAction>
 </Scheme>

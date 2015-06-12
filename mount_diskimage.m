@@ -5,27 +5,71 @@
  * as the user requesting the mount. */
 
 #import <Foundation/Foundation.h>
-#import "NSTask+Execute.h"
 
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <spawn.h>
 #include <time.h>
 #include <sys/file.h>
 #include <sys/stat.h>
-#include <sys/errno.h>
+#include <errno.h>
 
 
 /* start helper executable using standard fork()/exec() */
 static int forkexec(NSString *executablePath, NSArray *arguments)
 {
-	NSTask *helper = [[[NSTask alloc] init] autorelease];
-	[helper setLaunchPath:executablePath];
-	[helper setArguments:arguments];
-	[helper setEnvironment:[NSDictionary dictionary]];
-	[helper simpleLaunch];
-	[helper simpleWaitUntilExit];
-	return [helper simpleTerminationStatus];
+	pid_t pid = 0;
+	
+	const char *c_path = NULL;
+	const char **c_arguments = NULL;
+	const char **c_environment = NULL;
+	
+	@try {
+		c_path = [executablePath cStringUsingEncoding:[NSString defaultCStringEncoding]];
+		if (!c_path)
+			@throw NSInvalidArgumentException;
+		
+		size_t i = 0;
+		c_arguments = malloc(([arguments count] + 2)  * sizeof(const char *));
+		if (!c_arguments)
+			@throw NSInternalInconsistencyException;
+		c_arguments[i++] = [executablePath cStringUsingEncoding:[NSString defaultCStringEncoding]];
+		for (NSString *argument in arguments)
+			c_arguments[i++] = [argument cStringUsingEncoding:[NSString defaultCStringEncoding]];
+		c_arguments[i] = NULL;
+		
+		NSDictionary *environment = [[NSProcessInfo processInfo] environment];
+		
+		i = 0;
+		c_environment = malloc(([environment count] + 1) * sizeof(const char *));
+		if (!c_environment)
+			@throw NSInternalInconsistencyException;
+		NSString *environmentVariable;
+		NSEnumerator *enumerator = [environment keyEnumerator];
+		while ((environmentVariable = [enumerator nextObject])) {
+			NSString *environmentValue = [environment objectForKey:environmentVariable];
+			NSString *environmentPair = [NSString stringWithFormat:@"%@=%@", environmentVariable, environmentValue];
+			c_environment[i++] = [environmentPair cStringUsingEncoding:[NSString defaultCStringEncoding]];
+		}
+		c_environment[i] = NULL;
+		
+		if (posix_spawn(&pid, c_path, NULL, NULL, (char **)c_arguments, (char **)c_environment) != 0)
+			NSLog(@"error %d spawning child process “%s”", errno, c_path);
+	}
+	@finally {
+		free(c_arguments);
+		free(c_environment);
+	}
+	
+	int result, status = 0;
+	do {
+		result = waitpid(pid, &status, 0);
+	} while ((result < 0 && errno == EINTR) || result == 0 ||
+			 (result == pid && !WIFEXITED(status) && !WIFSIGNALED(status)));
+	if (WIFEXITED(status))
+		return WEXITSTATUS(status);
+	return status;
 }
 
 
@@ -87,8 +131,8 @@ int main(int argc, const char *argv[])
 			return EPERM;
 		
 		/* compact the disk image for about 10% of mount attempts */
-		srand(time(NULL));
-		if ((float)rand() / (float)RAND_MAX < 0.1) {
+		srandom(time(NULL));
+		if (random() / (float)RAND_MAX < 0.1) {
 			status = forkexec(@"/usr/bin/hdiutil", [NSArray arrayWithObjects:@"compact", image, nil]);
 			if (status != 0)
 				NSLog(@"compaction failed for disk image ‘%@’", image);
