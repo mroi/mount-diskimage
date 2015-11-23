@@ -12,6 +12,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CBF1D071C03660600FC62C3 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		4CBF1D081C03660D00FC62C3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		842450000E7D265B00A2BE64 /* mount_diskimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mount_diskimage.m; sourceTree = "<group>"; };
 		842450040E7D267800A2BE64 /* mount_diskimage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mount_diskimage; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D681B10E66C9B800068117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -32,6 +34,8 @@
 		089C166AFE841209C02AAC07 /* MountDiskimage */ = {
 			isa = PBXGroup;
 			children = (
+				4CBF1D081C03660D00FC62C3 /* README.md */,
+				4CBF1D071C03660600FC62C3 /* LICENSE.txt */,
 				842450000E7D265B00A2BE64 /* mount_diskimage.m */,
 				84D681B10E66C9B800068117 /* Foundation.framework */,
 				842450040E7D267800A2BE64 /* mount_diskimage */,
