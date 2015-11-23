@@ -163,9 +163,8 @@ int main(int argc, const char *argv[])
 		}
 		NSString *disk = nil;
 		for (NSDictionary *attachItem in [attachResult objectForKey:@"system-entities"])
-			if ([[attachItem objectForKey:@"content-hint"] isEqualToString:@"Apple_HFS"] ||
-				[[attachItem objectForKey:@"content-hint"] isEqualToString:@"Apple_HFSX"])
-				if ((disk = [attachItem objectForKey:@"dev-entry"]))
+			if ([[attachItem objectForKey:@"potentially-mountable"] boolValue] &&
+				(disk = [attachItem objectForKey:@"dev-entry"]))
 					break;
 		if (!disk) {
 			NSLog(@"no mountable volume found in disk image ‘%@’", image);
