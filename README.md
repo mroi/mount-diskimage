@@ -1,7 +1,7 @@
 Auto-Mount Disk Images
 ======================
 
-OS X disk images are helpful if you want to create a sub-file system with different case 
+MacOS disk images are helpful if you want to create a sub-file system with different case 
 sensitivity or crypto options, or if you want to store large files in a 
 Time-Machine-friendly way. I use a disk image to store my VMware files, because they are 
 huge and receive relatively small changes when the VM runs. When wrapped in a sparse bundle 
@@ -9,7 +9,7 @@ image, Time Machine gets those changes served in much smaller portions, which co
 backup space.
 
 However, to provide a seamless experience, those kinds of disk images should not need user 
-management, so auto-mounting is needed. OS X already supports auto-mounting, but only for 
+management, so auto-mounting is needed. MacOS already supports auto-mounting, but only for 
 device-backed file systems. This project adds support for disk image auto-mounting.
 
 To use it, install `mount_diskimage` to `/sbin`. Then add this line to the end of 
