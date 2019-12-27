@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -57,7 +57,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					4CC8B6231CA821D70015576D = {
 						CreatedOnToolsVersion = 7.3;
@@ -66,7 +66,7 @@
 				};
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "MountDiskimage" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -102,6 +102,7 @@
 				DSTROOT = /;
 				ENABLE_HARDENED_RUNTIME = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -114,6 +115,8 @@
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DSTROOT = /;
 				ENABLE_HARDENED_RUNTIME = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -125,7 +128,6 @@
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.reactorcontrol.mount-diskimage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -136,7 +138,6 @@
 				INSTALL_PATH = "$HOME/.unison/root-darwin";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.reactorcontrol.mount-diskimage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
