@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C7F947723B67FE6008BCB0C /* AttachResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F947623B67FE6008BCB0C /* AttachResult.swift */; };
 		4CC8B6281CA821D70015576D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC8B6271CA821D70015576D /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C7F947623B67FE6008BCB0C /* AttachResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachResult.swift; sourceTree = "<group>"; };
 		4CC8B6241CA821D70015576D /* mount_diskimage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mount_diskimage; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC8B6271CA821D70015576D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4CC8B62D1CA828E00015576D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -25,6 +27,7 @@
 				4CC8B62D1CA828E00015576D /* README.md */,
 				4CC8B62F1CA8291A0015576D /* LICENSE.txt */,
 				4CC8B6271CA821D70015576D /* main.swift */,
+				4C7F947623B67FE6008BCB0C /* AttachResult.swift */,
 				842450000E7D265B00A2BE64 /* mount_diskimage.m */,
 				4CC8B6241CA821D70015576D /* mount_diskimage */,
 			);
@@ -89,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CC8B6281CA821D70015576D /* main.swift in Sources */,
+				4C7F947723B67FE6008BCB0C /* AttachResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

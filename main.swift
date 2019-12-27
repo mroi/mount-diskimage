@@ -31,6 +31,32 @@ case 2:
 		}
 	}
 
+	// attach the image without mounting it
+	let result: AttachResult
+	do {
+		let process = Process()
+		let pipe = Pipe()
+		process.executableURL = hdiutil
+		process.arguments = ["attach", image, "-plist", "-nomount", "-noverify", "-noautofsck"]
+		process.standardOutput = pipe
+		try process.run()
+		process.waitUntilExit()
+
+		let data = pipe.fileHandleForReading.readDataToEndOfFile()
+		let status = process.terminationStatus
+		if !(data.count > 0 && status == EX_OK) {
+			os_log("attaching the disk image ‘%{public}s’ failed with error code %{errno}d", image, status)
+			exit(EX_UNAVAILABLE)
+		}
+
+		result = try AttachResult(from: data)
+	}
+	catch {
+		exit(EX_OSERR)
+	}
+
+	print("-fstype=\(result.type),nobrowse,nodev,nosuid :\(result.device)")
+
 default:
 	exit(EX_USAGE)
 }
