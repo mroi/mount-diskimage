@@ -65,6 +65,30 @@ case 2:
 		exit(EX_OSERR)
 	}
 
+	// run filesystem check on the attached image
+	do {
+		let fsck = URL(fileURLWithPath: "/sbin/fsck_\(result.type)")
+		let process = try Process.run(fsck, arguments: ["-q", result.device])
+		process.waitUntilExit()
+		let status = process.terminationStatus
+
+		if status != EX_OK {
+			os_log("the file system in disk image ‘%{public}s’ needs repair, error code: %d", image, status)
+
+			let diskutil = URL(fileURLWithPath: "/usr/sbin/diskutil")
+			let process = try Process.run(diskutil, arguments: ["repairDisk", result.device])
+			process.waitUntilExit()
+			let status = process.terminationStatus
+
+			if status != EX_OK {
+				os_log("the file system could not be repaired, error code: %d", status)
+			}
+		}
+	}
+	catch {
+		exit(EX_OSERR)
+	}
+
 	print("-fstype=\(result.type),nobrowse,nodev,nosuid :\(result.device)")
 
 default:
