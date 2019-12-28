@@ -18,6 +18,15 @@ case 2:
 		exit(EX_USAGE)
 	}
 
+	// drop privileges to the owner of the disk image
+	let attributes = try? FileManager.default.attributesOfItem(atPath: image)
+	if let group = (attributes?[.groupOwnerAccountID] as? NSNumber)?.uint32Value {
+		setgid(group)
+	}
+	if let user = (attributes?[.ownerAccountID] as? NSNumber)?.uint32Value {
+		setuid(user)
+	}
+
 	// compact the disk image for about 10% of mount attempts
 	if Float.random(in: 0...1) < 0.1 {
 		guard let process = try? Process.run(hdiutil, arguments: ["compact", image]) else {
