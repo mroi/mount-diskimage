@@ -3,42 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8424500A0E7D26AB00A2BE64 /* mount_diskimage.m in Sources */ = {isa = PBXBuildFile; fileRef = 842450000E7D265B00A2BE64 /* mount_diskimage.m */; };
-		8424500B0E7D26B700A2BE64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D681B10E66C9B800068117 /* Foundation.framework */; };
+		4CC8B6281CA821D70015576D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC8B6271CA821D70015576D /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4CBF1D071C03660600FC62C3 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		4CBF1D081C03660D00FC62C3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4CC8B6241CA821D70015576D /* mount_diskimage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mount_diskimage; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CC8B6271CA821D70015576D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4CC8B62D1CA828E00015576D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4CC8B62F1CA8291A0015576D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		842450000E7D265B00A2BE64 /* mount_diskimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mount_diskimage.m; sourceTree = "<group>"; };
-		842450040E7D267800A2BE64 /* mount_diskimage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mount_diskimage; sourceTree = BUILT_PRODUCTS_DIR; };
-		84D681B10E66C9B800068117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		842450020E7D267800A2BE64 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8424500B0E7D26B700A2BE64 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		089C166AFE841209C02AAC07 /* MountDiskimage */ = {
 			isa = PBXGroup;
 			children = (
-				4CBF1D081C03660D00FC62C3 /* README.md */,
-				4CBF1D071C03660600FC62C3 /* LICENSE.txt */,
+				4CC8B62D1CA828E00015576D /* README.md */,
+				4CC8B62F1CA8291A0015576D /* LICENSE.txt */,
+				4CC8B6271CA821D70015576D /* main.swift */,
 				842450000E7D265B00A2BE64 /* mount_diskimage.m */,
-				84D681B10E66C9B800068117 /* Foundation.framework */,
-				842450040E7D267800A2BE64 /* mount_diskimage */,
+				4CC8B6241CA821D70015576D /* mount_diskimage */,
 			);
 			name = MountDiskimage;
 			sourceTree = "<group>";
@@ -46,12 +34,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		842450030E7D267800A2BE64 /* mount_diskimage */ = {
+		4CC8B6231CA821D70015576D /* mount_diskimage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 842450180E7D26F900A2BE64 /* Build configuration list for PBXNativeTarget "mount_diskimage" */;
+			buildConfigurationList = 4CC8B6291CA821D70015576D /* Build configuration list for PBXNativeTarget "mount_diskimage" */;
 			buildPhases = (
-				842450010E7D267800A2BE64 /* Sources */,
-				842450020E7D267800A2BE64 /* Frameworks */,
+				4CC8B6201CA821D70015576D /* Sources */,
 			);
 			buildRules = (
 			);
@@ -59,7 +46,7 @@
 			);
 			name = mount_diskimage;
 			productName = mount_diskimage;
-			productReference = 842450040E7D267800A2BE64 /* mount_diskimage */;
+			productReference = 4CC8B6241CA821D70015576D /* mount_diskimage */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -69,30 +56,39 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 1030;
+				TargetAttributes = {
+					4CC8B6231CA821D70015576D = {
+						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
+					};
+				};
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "MountDiskimage" */;
-			compatibilityVersion = "Xcode 6.3";
-			developmentRegion = English;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* MountDiskimage */;
+			productRefGroup = 089C166AFE841209C02AAC07 /* MountDiskimage */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				842450030E7D267800A2BE64 /* mount_diskimage */,
+				4CC8B6231CA821D70015576D /* mount_diskimage */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		842450010E7D267800A2BE64 /* Sources */ = {
+		4CC8B6201CA821D70015576D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8424500A0E7D26AB00A2BE64 /* mount_diskimage.m in Sources */,
+				4CC8B6281CA821D70015576D /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,42 +98,45 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "-Weverything";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /;
+				ENABLE_HARDENED_RUNTIME = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "Michael Roitzsch";
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DSTROOT = /;
-				OTHER_CFLAGS = "-Weverything";
+				ENABLE_HARDENED_RUNTIME = YES;
 			};
 			name = Release;
 		};
-		842450060E7D267900A2BE64 /* Debug */ = {
+		4CC8B62A1CA821D70015576D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				INSTALL_MODE_FLAG = "u+rwX,go-rwx";
 				INSTALL_PATH = "$HOME/.unison/root-darwin";
-				OTHER_CODE_SIGN_FLAGS = "-i $(PRODUCT_BUNDLE_IDENTIFIER)";
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.reactorcontrol.mount-diskimage";
-				PRODUCT_NAME = mount_diskimage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		842450070E7D267900A2BE64 /* Release */ = {
+		4CC8B62B1CA821D70015576D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INSTALL_MODE_FLAG = "u+rwX,go-rwx";
 				INSTALL_PATH = "$HOME/.unison/root-darwin";
-				OTHER_CODE_SIGN_FLAGS = "-i $(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.reactorcontrol.mount-diskimage";
-				PRODUCT_NAME = mount_diskimage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -153,11 +152,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		842450180E7D26F900A2BE64 /* Build configuration list for PBXNativeTarget "mount_diskimage" */ = {
+		4CC8B6291CA821D70015576D /* Build configuration list for PBXNativeTarget "mount_diskimage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				842450060E7D267900A2BE64 /* Debug */,
-				842450070E7D267900A2BE64 /* Release */,
+				4CC8B62A1CA821D70015576D /* Debug */,
+				4CC8B62B1CA821D70015576D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
