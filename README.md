@@ -17,7 +17,7 @@ to this (path names will vary for you):
 	/Users/Shared/Volumes	/var/root/mount_diskimage	-hidefromfinder
 
 Then run `automount -c` for changes to become effective. You can configure the diskimages to 
-be automounted in the `imageMap` variable right in the code. Sorry, no config file.
+be automounted in the `imageMounts` variable right in the code. Sorry, no config file.
 
 ___
 This work is licensed under the [WTFPL](http://www.wtfpl.net/), so you can do anything you 
