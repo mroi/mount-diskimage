@@ -2,7 +2,7 @@ import Foundation
 import os
 
 let imageMounts = [
-	"Michael-VM": "/Users/Michael/Library/VM/VM.sparsebundle"
+	"Virtual Machines": "/Users/Michael/Library/VM/VM.sparsebundle"
 ].filter {
 	// only include existing images
 	FileManager.default.fileExists(atPath: $0.value)
