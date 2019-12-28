@@ -13,7 +13,6 @@ case 1:
 	print(imageMounts.keys.joined(separator: "\n"))
 
 case 2:
-	let hdiutil = URL(fileURLWithPath: "/usr/bin/hdiutil")
 	guard let image = imageMounts[CommandLine.arguments[1]] else {
 		exit(EX_USAGE)
 	}
@@ -28,11 +27,13 @@ case 2:
 	}
 
 	// compact the disk image for about 10% of mount attempts
+	let hdiutil = URL(fileURLWithPath: "/usr/bin/hdiutil")
 	if Float.random(in: 0...1) < 0.1 {
 		guard let process = try? Process.run(hdiutil, arguments: ["compact", image]) else {
 			exit(EX_OSERR)
 		}
 		process.waitUntilExit()
+
 		if process.terminationStatus != EX_OK {
 			os_log("compaction failed for disk image ‘%{public}s’", image)
 		} else {
@@ -54,7 +55,7 @@ case 2:
 		let data = pipe.fileHandleForReading.readDataToEndOfFile()
 		let status = process.terminationStatus
 		if !(data.count > 0 && status == EX_OK) {
-			os_log("attaching the disk image ‘%{public}s’ failed with error code %{errno}d", image, status)
+			os_log("attaching the disk image ‘%{public}s’ failed with error code %d", image, status)
 			exit(EX_UNAVAILABLE)
 		}
 
