@@ -67,19 +67,25 @@ case 2:
 
 	// run filesystem check on the attached image
 	do {
-		let fsck = URL(fileURLWithPath: "/sbin/fsck_\(result.type)")
-		let process = try Process.run(fsck, arguments: ["-q", result.device])
+		let process = Process()
+		process.executableURL = URL(fileURLWithPath: "/sbin/fsck_\(result.type)")
+		process.arguments = ["-q", result.device]
+		process.standardOutput = FileHandle.nullDevice
+		try process.run()
 		process.waitUntilExit()
-		let status = process.terminationStatus
 
+		let status = process.terminationStatus
 		if status != EX_OK {
 			os_log("the file system in disk image ‘%{public}s’ needs repair, error code: %d", image, status)
 
-			let diskutil = URL(fileURLWithPath: "/usr/sbin/diskutil")
-			let process = try Process.run(diskutil, arguments: ["repairDisk", result.device])
+			let process = Process()
+			process.executableURL = URL(fileURLWithPath: "/usr/sbin/diskutil")
+			process.arguments = ["repairDisk", result.device]
+			process.standardOutput = FileHandle.nullDevice
+			try process.run()
 			process.waitUntilExit()
-			let status = process.terminationStatus
 
+			let status = process.terminationStatus
 			if status != EX_OK {
 				os_log("the file system could not be repaired, error code: %d", status)
 			}
