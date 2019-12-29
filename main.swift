@@ -29,14 +29,12 @@ case 2:
 	// compact the disk image for about 10% of mount attempts
 	let hdiutil = URL(fileURLWithPath: "/usr/bin/hdiutil")
 	if Float.random(in: 0...1) < 0.1 {
-		guard let process = try? Process.run(hdiutil, arguments: ["compact", image]) else {
+		guard let process = try? Process.run(hdiutil, arguments: ["compact", image, "-quiet"]) else {
 			exit(EX_OSERR)
 		}
 		process.waitUntilExit()
 
-		if process.terminationStatus != EX_OK {
-			os_log("compaction failed for disk image ‘%{public}s’", image)
-		} else {
+		if process.terminationStatus == EX_OK {
 			os_log("compacted disk image ‘%{public}s’", image)
 		}
 	}
