@@ -42,7 +42,7 @@ case 2:
 	}
 
 	// attach the image without mounting it
-	let result: AttachResult
+	let result: AttachInfo
 	do {
 		let process = Process()
 		let pipe = Pipe()
@@ -59,7 +59,7 @@ case 2:
 			exit(EX_UNAVAILABLE)
 		}
 
-		result = try AttachResult(from: data)
+		result = try AttachInfo(from: data)
 	}
 	catch {
 		exit(EX_OSERR)

@@ -3,7 +3,7 @@ import Foundation
 /**
 Decode the property list resulting from `hdiutil attach` and extract the primary mountable volume.
 */
-struct AttachResult: Decodable {
+struct AttachInfo: Decodable {
 	let device: String
 	let type: String
 
