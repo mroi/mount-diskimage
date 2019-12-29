@@ -65,7 +65,15 @@ case 2:
 		exit(EX_OSERR)
 	}
 
-	// run filesystem check on the attached image
+	// now that we know the details, definitely print output when finished
+	defer {
+		print("-fstype=\(result.type),nobrowse,nodev,nosuid :\(result.device)")
+	}
+
+	// early exit if the image has been mounted by previous automount invocations
+	if result.mounted { break }
+
+	// run filesystem check if the image is not mounted
 	do {
 		let process = Process()
 		process.executableURL = URL(fileURLWithPath: "/sbin/fsck_\(result.type)")
@@ -94,8 +102,6 @@ case 2:
 	catch {
 		exit(EX_OSERR)
 	}
-
-	print("-fstype=\(result.type),nobrowse,nodev,nosuid :\(result.device)")
 
 default:
 	exit(EX_USAGE)

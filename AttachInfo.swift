@@ -6,6 +6,7 @@ Decode the property list resulting from `hdiutil attach` and extract the primary
 struct AttachInfo: Decodable {
 	let device: String
 	let type: String
+	let mounted: Bool
 
 	private enum AttachKeys: String, CodingKey {
 		case systemEntities = "system-entities"
@@ -14,6 +15,7 @@ struct AttachInfo: Decodable {
 		case device = "dev-entry"
 		case mountable = "potentially-mountable"
 		case volumeType = "volume-kind"
+		case mountPoint = "mount-point"
 	}
 
 	init(from data: Data) throws {
@@ -33,6 +35,7 @@ struct AttachInfo: Decodable {
 			if mountable && allowedVolumeTypes.contains(volumeType) {
 				device = try entity.decode(String.self, forKey: .device)
 				type = volumeType
+				mounted = (try entity.decodeIfPresent(String.self, forKey: .mountPoint)) != nil
 				return
 			}
 		}
