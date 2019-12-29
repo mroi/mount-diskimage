@@ -16,6 +16,11 @@ struct AttachInfo: Decodable {
 		case volumeType = "volume-kind"
 	}
 
+	init(from data: Data) throws {
+		let decoder = PropertyListDecoder()
+		self = try decoder.decode(AttachInfo.self, from: data)
+	}
+
 	init(from decoder: Decoder) throws {
 		let allowedVolumeTypes = ["apfs", "hfs"]
 		var entities = try decoder
@@ -33,10 +38,5 @@ struct AttachInfo: Decodable {
 		}
 		let context = DecodingError.Context(codingPath: [AttachKeys.systemEntities], debugDescription: "no matching mountable volume found")
 		throw DecodingError.keyNotFound(EntityKeys.device, context)
-	}
-
-	init(from data: Data) throws {
-		let decoder = PropertyListDecoder()
-		self = try decoder.decode(AttachResult.self, from: data)
 	}
 }
