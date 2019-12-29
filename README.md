@@ -14,7 +14,7 @@ device-backed file systems. This project adds support for disk image auto-mounti
 To use it, add `mount_diskimage` as an executable mount map to of `/etc/auto_master` similar 
 to this (path names will vary for you):
 
-	/Users/Shared/Volumes	/var/root/mount_diskimage	-hidefromfinder
+	/System/Volumes/Data/images	/var/root/mount_diskimage	-hidefromfinder
 
 Then run `automount -c` for changes to become effective. You can configure the diskimages to 
 be automounted in the `imageMounts` variable right in the code. Sorry, no config file.
