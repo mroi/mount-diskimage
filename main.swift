@@ -37,6 +37,7 @@ case 2:
 		if process.terminationStatus == EX_OK {
 			os_log("compacted disk image ‘%{public}s’", image)
 		}
+		// compaction expectedly fails when the image is already attached
 	}
 
 	// attach the image without mounting it
