@@ -16,8 +16,8 @@ to this (path names will vary for you):
 
 	/System/Volumes/Data/images	/var/root/mount_diskimage	-hidefromfinder
 
-Then run `automount -c` for changes to become effective. You can configure the diskimages to 
-be automounted in the `imageMounts` variable right in the code. Sorry, no config file.
+Then run `automount -c` for changes to become effective. You can configure the disk images 
+to be automounted in the `imageMounts` variable right in the code. Sorry, no config file.
 
 ___
 This work is licensed under the [WTFPL](http://www.wtfpl.net/), so you can do anything you 
