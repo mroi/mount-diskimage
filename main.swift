@@ -87,7 +87,7 @@ case 2:
 
 			let process = Process()
 			process.executableURL = URL(fileURLWithPath: "/usr/sbin/diskutil")
-			process.arguments = ["repairDisk", result.device]
+			process.arguments = ["repairVolume", result.device]
 			process.standardOutput = FileHandle.nullDevice
 			try process.run()
 			process.waitUntilExit()
